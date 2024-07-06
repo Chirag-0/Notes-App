@@ -101,6 +101,7 @@ const saveChanges = () =>{
                     let clickedBody = clickElem.querySelector('.notes__small-body');
                     let clickedDate = clickElem.querySelector('.notes__small-updated');
                     clickedBody.textContent = newBod;
+                    txt.value = newBod;
                     clickedDate.textContent = dateString;
                 }
             }
