@@ -125,13 +125,17 @@ const updateStorage = () => {
 
     // Iterate over each note item
     document.querySelectorAll('.notes__list-item').forEach(note => {
-        // Extract data from the note item
-        const title = note.querySelector('.notes__small-title').textContent;
-        const body = note.querySelector('.notes__small-body').textContent;
-        const updated = note.querySelector('.notes__small-updated').textContent;
-       
-        // Add the note data to the array
-        notesData.push({title, body, updated});
+
+         // Extract data from the note item with null checks 
+         const titleElement = note.querySelector('.notes__small-title'); 
+         const bodyElement = note.querySelector('.notes__small-body'); const updatedElement = note.querySelector('notes__small-updated'); 
+         
+         const title = titleElement ? titleElement.textContent : ''; 
+         const body = bodyElement ? bodyElement.textContent : ''; 
+         const updated = updatedElement ? updatedElement.textContent : ''; 
+
+         // Add the note data to the array 
+         notesData.push({ title, body, updated });
         
     });
 
